@@ -14,13 +14,14 @@
 
   list-style: none;
 
-  @media (max-width: @mobile-width) {
+  @media (max-width: @tablet-width) {
     flex-direction: column;
   }
 }
 
 .links-list__link {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .links-list__title {
@@ -31,7 +32,7 @@
   background: transparent;
   white-space: nowrap;
 
-  @media (max-width: @mobile-width) {
+  @media (max-width: @tablet-width) {
     font-size: 40px;
   }
 }

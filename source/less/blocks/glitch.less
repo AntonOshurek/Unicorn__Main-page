@@ -23,7 +23,8 @@
     text-shadow: -1px 0 rgba(blue,0.7);
   }
 
-  &:hover {
+  &:hover,
+  .glitch-link:focus > & {
     &:before {
       text-shadow: 4px 0 rgba(red,0.7);
       animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
