@@ -1,7 +1,6 @@
 .printed-text {
   overflow: hidden;
-  color: white;
-  border-right: 4px solid white;
+  border-right: 4px solid @standart-white;
 
   &--it {
     width: 11ch;
@@ -18,13 +17,13 @@
 
 @keyframes flashin-border{
   0%{
-    border-color: white;
+    border-color: @standart-white;
   }
   50%{
     border-color: transparent;
   }
   100%{
-    border-color: white;
+    border-color: @standart-white;
   }
 }
 
