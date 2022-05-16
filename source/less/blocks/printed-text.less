@@ -1,0 +1,34 @@
+.printed-text {
+  overflow: hidden;
+  border-right: 4px solid @standart-white;
+
+  &--it {
+    width: 11ch;
+    animation: printed-text 1.5s steps(10),
+    flashin-border .75s step-start infinite;
+  }
+
+  &--arh {
+    width: 19ch;
+    animation: printed-text 3s steps(20),
+    flashin-border .75s step-start infinite;
+  }
+}
+
+@keyframes flashin-border{
+  0%{
+    border-color: @standart-white;
+  }
+  50%{
+    border-color: transparent;
+  }
+  100%{
+    border-color: @standart-white;
+  }
+}
+
+@keyframes printed-text{
+  from {
+    width: 0%;
+  }
+}

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 40px;
 
   position: absolute;
@@ -13,10 +14,6 @@
 	transform: translate3d(-50%,-50%,0);
 
   list-style: none;
-
-  @media (max-width: @tablet-width) {
-    flex-direction: column;
-  }
 }
 
 .links-list__link {
@@ -25,14 +22,20 @@
 }
 
 .links-list__title {
+  font-family: 'Roboto Mono', monospace, 'serif';
   font-size: 60px;
   color: #f9f1e9;
 	text-align: center;
   font-weight: bold;
   background: transparent;
   white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: .1px;
 
   @media (max-width: @tablet-width) {
     font-size: 40px;
+  }
+  @media (max-width: @mobile-width) {
+    font-size: 30px;
   }
 }
