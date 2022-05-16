@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", "Arial", sans-serif;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/ptsans.woff2") format("woff2"), url("../fonts/ptsans.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/ptsansbold.woff2") format("woff2"), url("../fonts/ptsansbold.woff") format("woff");
+  font-display: swap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", "Arial", sans-serif;
+  background: #333;
+
+  &--scrolloff {
+    overflow: hidden;
+  }
+
+  &:after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 400px;
+    background: linear-gradient(286deg, rgba(27,231,255,.5) 25.99%, #e47aff 80.62%,
+    rgba(100,19,255,.6) 80.2%);
+    background-size: 100%;
+    border-radius: 100%;
+    filter: blur(100px);
+  }
+
+  @media (max-width: 600px) {
+    &:after {
+      display: none;
+      // z-index: 1;
+      // content: '';
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      // width: 100%;
+      // height: 100%;
+      // background: linear-gradient(0deg, rgba(27,231,255,.5) 25.99%, #e47aff 65.62%,
+      // rgba(100,19,255,.6) 80.2%);
+      // background-size: 100%;
+      // border-radius: 100%;
+      // filter: blur(100px);
+    }
+  }
+}
+
+.large-header {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 2;
+}
+
+.titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: absolute;
+  top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+  font-size: 60px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    font-size: 40px;
+  }
+}
+
+.titles__title {
+  cursor: pointer;
+
+	color: #f9f1e9;
+	text-align: center;
+  font-weight: bold;
+  background: transparent;
+  white-space: nowrap;
+
+  // &--it {
+  //   &:hover {
+  //     background: linear-gradient(286deg, #e47aff 24.62%,
+  //     rgba(100,19,255,.6) 80.2%);
+  //     -webkit-background-clip: text;
+  //     -webkit-text-fill-color: transparent;
+  //   }
+  // }
+
+  // &--arc {
+  //   &:hover {
+  //     background: linear-gradient(286deg, #e47aff 24.62%,
+  //     rgba(100,19,255,.6) 80.2%);
+  //     -webkit-background-clip: text;
+  //     -webkit-text-fill-color: transparent;
+  //   }
+  // }
+}
+
+.glitch {
+  position: relative;
+  color: white;
+  mix-blend-mode: lighten;
+
+  &:before,
+  &:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: transparent;
+      clip: rect(0, 0, 0, 0);
+  }
+
+  &:before {
+      left: -1px;
+      text-shadow: 1px 0 rgba(red,0.7);
+  }
+
+  &:after {
+      left: 1px;
+      text-shadow: -1px 0 rgba(blue,0.7);
+  }
+
+  &:hover {
+    &:before {
+      text-shadow: 4px 0 rgba(red,0.7);
+      animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
+    }
+    &:after {
+      text-shadow: -5px 0 rgba(blue,0.7);
+      animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
+    }
+  }
+}
+
+@keyframes glitch-loop-1 {
+  0% { clip: rect(36px, 9999px, 9px, 0) }
+  25% { clip: rect(25px, 9999px, 99px, 0) }
+  50% { clip: rect(50px, 9999px, 102px, 0) }
+  75% { clip: rect(30px, 9999px, 92px, 0) }
+  100% { clip: rect(91px, 9999px, 98px, 0) }
+}
+
+@keyframes glitch-loop-2 {
+  0% { top: -1px; left: 1px; clip: rect(65px, 9999px, 119px, 0) }
+  25% { top: -6px; left: 4px; clip: rect(79px, 9999px, 19px, 0) }
+  50% { top: -3px; left: 2px; clip: rect(68px, 9999px, 11px, 0) }
+  75% { top: 0px; left: -4px; clip: rect(95px, 9999px, 53px, 0) }
+  100% { top: -1px; left: -1px; clip: rect(31px, 9999px, 149px, 0) }
+}
